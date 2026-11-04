@@ -1,0 +1,36 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #060907;
+    color: #e2e8f0;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Rajdhani', 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: 0.02em;
+  }
+
+  code, pre, .font-mono, .tabular-nums {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Custom Tactical Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #090e0b;
+}
+::-webkit-scrollbar-thumb {
+  background: #1c2b21;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2b4233;
+}

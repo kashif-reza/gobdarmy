@@ -1,0 +1,6 @@
+{
+  "name": "TACTICAL // BD — Interactive Defense Showcase",
+  "description": "A digital showcase platform exploring Bangladesh's defense forces, ranks, uniforms, insignia, equipment, roles, and capabilities.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
