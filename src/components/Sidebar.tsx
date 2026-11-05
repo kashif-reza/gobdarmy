@@ -15,6 +15,7 @@ import {
   ChevronLeft,
   ChevronRight,
   Anchor,
+  Timer,
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -220,6 +221,26 @@ export const Sidebar: React.FC<SidebarProps> = ({ isCollapsed, setIsCollapsed })
             >
               <Compass className="w-4 h-4 text-rose-400 shrink-0" />
               {!isCollapsed && <span>Careers & ISSB</span>}
+            </button>
+
+            <button
+              onClick={() => setActiveView('simulator')}
+              className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs transition-colors cursor-pointer ${
+                activeView === 'simulator'
+                  ? 'bg-rose-950/80 text-rose-200 border border-rose-700 font-semibold'
+                  : 'text-stone-300 hover:bg-stone-900 hover:text-white'
+              }`}
+              title="ISSB Exam Simulator (Real-Time)"
+            >
+              <div className="flex items-center gap-3">
+                <Timer className="w-4 h-4 text-rose-400 shrink-0" />
+                {!isCollapsed && <span>Exam Simulator</span>}
+              </div>
+              {!isCollapsed && (
+                <span className="text-[9px] px-1.5 py-0.2 rounded bg-rose-950 text-rose-300 font-mono border border-rose-800/60">
+                  LIVE
+                </span>
+              )}
             </button>
           </div>
         </div>

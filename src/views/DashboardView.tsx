@@ -15,6 +15,8 @@ import {
   ExternalLink,
   ChevronRight,
   Search,
+  Timer,
+  Play,
 } from 'lucide-react';
 
 export const DashboardView: React.FC = () => {
@@ -252,6 +254,36 @@ export const DashboardView: React.FC = () => {
               </div>
             </button>
           ))}
+        </div>
+      </section>
+
+      {/* Interactive ISSB Exam Simulator Banner */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative rounded-2xl overflow-hidden border border-emerald-800/60 bg-gradient-to-r from-[#09150e] via-[#0b1c13] to-[#08120c] p-6 sm:p-8 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-6">
+          <div className="space-y-3 max-w-2xl text-center lg:text-left">
+            <div className="inline-flex items-center gap-2 text-xs font-mono text-[#c5a059] uppercase tracking-wider">
+              <Timer className="w-4 h-4 text-rose-400" />
+              <span>Real-Time Examination Simulator</span>
+              <span>·</span>
+              <span className="text-emerald-400 font-bold">Subtle Web Audio Alerts</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-bold text-stone-100 font-display">
+              Candidate Aptitude & Tactical Reaction Simulator
+            </h2>
+            <p className="text-xs sm:text-sm text-stone-300 leading-relaxed">
+              Step into the ISSB examination atmosphere with real-time countdown clocks, audio alerts for urgent time thresholds, procedural task completion chimes, and tactical officer decision-making drills.
+            </p>
+          </div>
+
+          <div className="flex flex-wrap items-center justify-center gap-3 shrink-0">
+            <button
+              onClick={() => setActiveView('simulator')}
+              className="flex items-center gap-2.5 px-6 py-3 rounded-xl bg-[#c5a059] hover:bg-[#d4af37] text-stone-950 font-bold text-xs transition-all shadow-xl hover:shadow-[#c5a059]/30 cursor-pointer"
+            >
+              <Play className="w-4 h-4 fill-stone-950" />
+              <span>Launch Live Simulator</span>
+            </button>
+          </div>
         </div>
       </section>
 

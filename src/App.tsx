@@ -32,6 +32,7 @@ import { CareersView } from './views/CareersView';
 import { CompareView } from './views/CompareView';
 import { FavoritesView } from './views/FavoritesView';
 import { AdminView } from './views/AdminView';
+import { AptitudeSimulator } from './components/AptitudeSimulator';
 
 const MainContent: React.FC = () => {
   const { activeView, setActiveView } = useShowcase();
@@ -59,6 +60,11 @@ const MainContent: React.FC = () => {
           {activeView === 'equipment' && <EquipmentView />}
           {activeView === 'capabilities' && <CapabilitiesView />}
           {activeView === 'careers' && <CareersView />}
+          {activeView === 'simulator' && (
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
+              <AptitudeSimulator onClose={() => setActiveView('careers')} />
+            </div>
+          )}
           {activeView === 'compare' && <CompareView />}
           {activeView === 'favorites' && <FavoritesView />}
           {activeView === 'admin' && <AdminView />}

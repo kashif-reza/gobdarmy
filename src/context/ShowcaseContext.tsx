@@ -32,6 +32,7 @@ export type ViewSection =
   | 'equipment'
   | 'capabilities'
   | 'careers'
+  | 'simulator'
   | 'compare'
   | 'favorites'
   | 'admin';

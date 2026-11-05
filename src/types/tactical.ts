@@ -144,6 +144,7 @@ export interface CapabilityItem {
   title: string;
   force: ForceType | 'Joint Armed Forces';
   domain: string;
+  image?: string;
   description: string;
   keyAssets: string[];
   verifiedStatistic: {
@@ -160,6 +161,7 @@ export interface CareerPathway {
   title: string;
   force: ForceType;
   category: 'Commissioned Officer' | 'Specialist Entry' | 'Soldier / Sailor / Airman' | 'Female Officer Stream';
+  image?: string;
   entryRoute: string;
   overview: string;
   eligibilityEducation: string[];

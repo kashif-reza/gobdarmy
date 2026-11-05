@@ -10,10 +10,9 @@ export const Navbar: React.FC = () => {
     { label: 'Dashboard', view: 'dashboard' },
     { label: 'Forces', view: 'forces' },
     { label: 'Ranks', view: 'ranks' },
-    { label: 'Posts & Roles', view: 'posts' },
-    { label: 'Uniforms', view: 'uniforms' },
     { label: 'Equipment', view: 'equipment' },
     { label: 'Careers', view: 'careers' },
+    { label: 'Simulator', view: 'simulator' },
   ];
 
   const handleNavClick = (view: ViewSection) => {

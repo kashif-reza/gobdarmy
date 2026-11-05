@@ -1200,6 +1200,7 @@ export const CAPABILITIES_DATA: CapabilityItem[] = [
     title: 'UN Peacekeeping & International Humanitarian Leadership',
     force: 'Joint Armed Forces',
     domain: 'Global Peace & Stability',
+    image: '/src/assets/images/army_un_peacekeeping_1793861251951.jpg',
     description: 'Bangladesh is one of the world\'s leading top Troop and Police Contributing Countries (T/PCC) to United Nations peacekeeping operations, with an illustrious legacy of service spanning over three decades across Africa, Europe, and Asia.',
     keyAssets: ['Mechanized Infantry Contingents', 'Armed Forces Field Hospitals (Level II & III)', 'Aviation Units (Mi-171Sh & Bell)', 'Riverine Naval Units', 'Military Engineers & EOD Teams'],
     verifiedStatistic: {
@@ -1218,6 +1219,7 @@ export const CAPABILITIES_DATA: CapabilityItem[] = [
     title: 'Maritime EEZ Sovereignty & Bay of Bengal Security',
     force: 'Bangladesh Navy',
     domain: 'Blue Water & Coastal Defense',
+    image: '/src/assets/images/navy_bridge_command_1793861251418.jpg',
     description: 'Safeguards 118,813 square kilometers of national maritime economic zone, enforcing rights over offshore oil/gas reserves, commercial sea lines of communication (SLOC), and fishery conservation.',
     keyAssets: ['Guided Missile Frigates', 'Stealth Corvettes', 'Offshore Patrol Vessels', 'Maritime Patrol Aircraft (Dornier 228NG)', 'Conventional Attack Submarines'],
     verifiedStatistic: {
@@ -1236,6 +1238,7 @@ export const CAPABILITIES_DATA: CapabilityItem[] = [
     title: 'Sovereign Airspace Surveillance & Interception',
     force: 'Bangladesh Air Force',
     domain: 'Integrated Air Defense',
+    image: '/src/assets/images/baf_cockpit_simulator_1793861251680.jpg',
     description: 'Maintains comprehensive 24/7 radar surveillance and rapid reaction alert interception coverage over national airspace against hostile penetrations and uncoordinated flights.',
     keyAssets: ['MiG-29B Air Superiority Fighters', 'F-7BGI Interceptors', 'Long-Range 3D Surveillance Radars (Kronos Land)', 'SHORAD Missiles'],
     verifiedStatistic: {
@@ -1254,6 +1257,7 @@ export const CAPABILITIES_DATA: CapabilityItem[] = [
     title: 'Rapid Disaster Response & Humanitarian Rescue',
     force: 'Joint Armed Forces',
     domain: 'National Crisis & Civil Support',
+    image: '/src/assets/images/tactical_bd_hero_defense_1793808498280.jpg',
     description: 'The Armed Forces represent the premier first responder during extreme climatic disasters including catastrophic cyclones in the Bay of Bengal, severe monsoonal flooding, landslides, and riverbank erosions.',
     keyAssets: ['Army Engineer Bridge Units & BTR Amphibious Vehicles', 'Navy Landing Craft Utility (LCU) & Hospital Ships', 'Air Force Mi-17 & C-130 Airlifters'],
     verifiedStatistic: {
@@ -1272,6 +1276,7 @@ export const CAPABILITIES_DATA: CapabilityItem[] = [
     title: 'Strategic National Engineering & Border Infrastructure',
     force: 'Bangladesh Army',
     domain: 'National Strategic Construction',
+    image: '/src/assets/images/cadet_issb_training_1793861251673.jpg',
     description: 'The Corps of Engineers (Special Works Organization - SWO) executes critical national megaprojects requiring complex engineering, high altitude mountain roads, and sovereign strategic access.',
     keyAssets: ['Heavy Earthmoving Machinery', 'Military Survey & Geospatial Regiments', 'Pontoon and Bailey Bridge Regiments'],
     verifiedStatistic: {
@@ -1293,6 +1298,7 @@ export const CAREER_DATA: CareerPathway[] = [
     title: 'Bangladesh Military Academy (BMA) Regular Long Course',
     force: 'Bangladesh Army',
     category: 'Commissioned Officer',
+    image: '/src/assets/images/cadet_issb_training_1793861251673.jpg',
     entryRoute: 'Direct Cadet Entry via ISSB',
     overview: 'The premier entry route to receive a permanent regular commission as an officer in the Bangladesh Army. Cadets undergo rigorous military leadership, tactical discipline, academic undergraduate degrees (BSc/BSS under Bangladesh University of Professionals), and physical endurance training at BMA Bhatiary, Chattogram.',
     eligibilityEducation: [
@@ -1323,6 +1329,7 @@ export const CAREER_DATA: CareerPathway[] = [
     title: 'Bangladesh Naval Academy (BNA) Officer Cadet',
     force: 'Bangladesh Navy',
     category: 'Commissioned Officer',
+    image: '/src/assets/images/navy_bridge_command_1793861251418.jpg',
     entryRoute: 'Direct Cadet Entry via ISSB',
     overview: 'Commissioning route for Executive, Marine Engineering, Electrical, and Logistics officers of the Bangladesh Navy. Training combines naval seamanship, navigation, military leadership, and maritime engineering degrees accredited by BUP.',
     eligibilityEducation: [
@@ -1353,6 +1360,7 @@ export const CAREER_DATA: CareerPathway[] = [
     title: 'Bangladesh Air Force Academy (BAFA) Officer Cadet',
     force: 'Bangladesh Air Force',
     category: 'Commissioned Officer',
+    image: '/src/assets/images/baf_cockpit_simulator_1793861251680.jpg',
     entryRoute: 'Direct Cadet Entry via ISSB',
     overview: 'Entry into the General Duties Pilot (GD(P)), Aeronautical Engineering, Air Defense Weapon Controller, Logistics, and Admin branches of the Bangladesh Air Force. Aviation cadets receive solo flight training and BUP aeronautical degrees.',
     eligibilityEducation: [
@@ -1384,6 +1392,7 @@ export const CAREER_DATA: CareerPathway[] = [
     title: 'Direct Short Service Commission (Doctors, Engineers, Education)',
     force: 'Bangladesh Army',
     category: 'Specialist Entry',
+    image: '/src/assets/images/cadet_issb_training_1793861251673.jpg',
     entryRoute: 'Graduate Specialist Direct Commission',
     overview: 'Direct officer commissioning for qualified civilian professionals such as Medical Doctors (Army Medical Corps), Dental Surgeons, Aeronautical/Civil Engineers (Corps of Engineers/EME), and Education Officers.',
     eligibilityEducation: [

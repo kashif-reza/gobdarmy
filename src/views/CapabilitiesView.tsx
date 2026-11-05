@@ -100,10 +100,24 @@ export const CapabilitiesView: React.FC = () => {
                 </div>
               </div>
 
-              {/* Description */}
-              <p className="text-xs sm:text-sm text-stone-300 leading-relaxed">
-                {cap.description}
-              </p>
+              {/* Media Preview & Description */}
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+                {cap.image && (
+                  <div className="lg:col-span-5 rounded-2xl overflow-hidden bg-black/60 border border-stone-800 aspect-video flex items-center justify-center">
+                    <img
+                      src={cap.image}
+                      alt={cap.title}
+                      referrerPolicy="no-referrer"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                )}
+                <div className={cap.image ? 'lg:col-span-7 space-y-3' : 'lg:col-span-12'}>
+                  <p className="text-xs sm:text-sm text-stone-300 leading-relaxed">
+                    {cap.description}
+                  </p>
+                </div>
+              </div>
 
               {/* Highlights & Assets */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">

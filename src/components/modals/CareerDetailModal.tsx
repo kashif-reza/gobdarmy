@@ -42,6 +42,18 @@ export const CareerDetailModal: React.FC = () => {
 
         {/* Content */}
         <div className="flex-1 overflow-y-auto p-6 space-y-6">
+          {/* Realistic Training Facility Image */}
+          {selectedCareer.image && (
+            <div className="rounded-xl overflow-hidden bg-black/60 border border-stone-800 aspect-video flex items-center justify-center">
+              <img
+                src={selectedCareer.image}
+                alt={selectedCareer.title}
+                referrerPolicy="no-referrer"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          )}
+
           {/* Overview */}
           <div>
             <h4 className="text-xs uppercase tracking-wider font-mono text-emerald-400 mb-1.5">Pathway Overview</h4>
