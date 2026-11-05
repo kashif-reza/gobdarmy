@@ -317,8 +317,19 @@ export const ThreeRadarCanvas: React.FC = () => {
     // Animation Loop
     let angle = 0;
     let frameId = 0;
+    let timerId = 0;
     const currentCamPos = camera.position.clone();
     const currentLookAt = new THREE.Vector3(0, 0, 0);
+
+    const scheduleNextFrame = () => {
+      if (isSoftwareGl) {
+        timerId = window.setTimeout(() => {
+          frameId = requestAnimationFrame(tick);
+        }, 33);
+      } else {
+        frameId = requestAnimationFrame(tick);
+      }
+    };
 
     const tick = () => {
       // 1. Rotate radar scanner
@@ -349,7 +360,7 @@ export const ThreeRadarCanvas: React.FC = () => {
       camera.lookAt(currentLookAt);
 
       renderer.render(scene, camera);
-      frameId = requestAnimationFrame(tick);
+      scheduleNextFrame();
     };
 
     frameId = requestAnimationFrame(tick);
@@ -368,6 +379,7 @@ export const ThreeRadarCanvas: React.FC = () => {
 
     return () => {
       cancelAnimationFrame(frameId);
+      clearTimeout(timerId);
       container.removeEventListener('mousemove', handlePointerMove);
       container.removeEventListener('click', handleClick);
       container.removeEventListener('mousedown', onMouseDown);
@@ -494,11 +506,11 @@ export const ThreeRadarCanvas: React.FC = () => {
       )}
 
       {/* Unified Bottom Control Dock (Collapsible, Zero Viewport Occlusion) */}
-      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 w-[92%] max-w-2xl z-20 transition-all duration-300">
-        <div className="flex justify-center -mb-2">
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-[92%] max-w-2xl z-20 transition-all duration-300">
+        <div className="flex justify-center">
           <button
             onClick={() => setIsDockCollapsed(!isDockCollapsed)}
-            className="flex items-center gap-1 px-3 py-1 bg-stone-900/90 hover:bg-stone-800 border border-stone-700/80 text-[11px] text-stone-300 rounded-t-lg transition-colors cursor-pointer"
+            className="flex items-center gap-1 px-3 py-1 bg-stone-900/95 hover:bg-stone-800 border border-b-0 border-stone-700/80 text-[11px] text-stone-300 rounded-t-lg transition-colors cursor-pointer"
           >
             {isDockCollapsed ? (
               <>

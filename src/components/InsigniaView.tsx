@@ -167,7 +167,7 @@ export const InsigniaView: React.FC<InsigniaViewProps> = ({
 
         {/* Crossed Swords (General / Flag officers) */}
         {rank.hasSwords && (
-          <g transform="translate(40, rank.hasShapla || rank.hasEagle ? 52 : 40) scale(0.7)">
+          <g transform={`translate(40, ${rank.hasShapla || rank.hasEagle ? 52 : 40}) scale(0.7)`}>
             <line x1="-20" y1="-14" x2="20" y2="14" stroke="#d4af37" strokeWidth="3" strokeLinecap="round" />
             <line x1="20" y1="-14" x2="-20" y2="14" stroke="#d4af37" strokeWidth="3" strokeLinecap="round" />
             <circle cx="0" cy="0" r="3" fill="#fef08a" />
@@ -253,7 +253,7 @@ export const InsigniaView: React.FC<InsigniaViewProps> = ({
         )}
 
         {/* Naval & BAF Stripes / Rings if applicable */}
-        {rank.stripesCount && (
+        {rank.stripesCount && rank.category !== 'Non-Commissioned Officer' && (
           <g transform="translate(15, 60)">
             {Array.from({ length: rank.stripesCount }).map((_, i) => (
               <rect

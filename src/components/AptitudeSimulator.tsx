@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { SIMULATOR_QUESTIONS, SimulatorQuestion } from '../data/simulatorData';
 import { soundEngine } from '../utils/audio';
+import { evaluateSimulatorScore } from '../utils/tacticalLogic';
 import {
   Timer,
   Volume2,
@@ -133,8 +134,10 @@ export const AptitudeSimulator: React.FC<AptitudeSimulatorProps> = ({ onClose })
     setIsExamCompleted(false);
   };
 
-  const totalScore = userAnswers.filter((a) => a.correct).length;
-  const scorePercent = Math.round((totalScore / SIMULATOR_QUESTIONS.length) * 100);
+  const { totalScore, scorePercent, assessmentLabel, streamRecommendation } = evaluateSimulatorScore(
+    userAnswers,
+    SIMULATOR_QUESTIONS.length
+  );
 
   return (
     <div className="rounded-2xl bg-[#090f0c] border border-stone-800 overflow-hidden shadow-2xl relative">
@@ -367,11 +370,7 @@ export const AptitudeSimulator: React.FC<AptitudeSimulatorProps> = ({ onClose })
             <div className="p-4 rounded-xl bg-stone-900/60 border border-stone-800">
               <div className="text-[11px] font-mono text-stone-500 uppercase">Assessment</div>
               <div className="text-sm font-bold text-stone-200 mt-2">
-                {scorePercent >= 80
-                  ? 'Highly Recommended'
-                  : scorePercent >= 60
-                  ? 'Recommended'
-                  : 'Needs Review'}
+                {assessmentLabel}
               </div>
             </div>
           </div>
@@ -382,11 +381,7 @@ export const AptitudeSimulator: React.FC<AptitudeSimulatorProps> = ({ onClose })
               Commission Stream Recommendation
             </div>
             <div className="text-sm font-semibold text-stone-100">
-              {scorePercent >= 80
-                ? 'High Aptitude: BAF General Duties Pilot GD(P) / Naval Executive Surface Combat'
-                : scorePercent >= 60
-                ? 'Strong Aptitude: Army Armoured / Infantry Officer Cadet Stream (BMA Long Course)'
-                : 'Development Stream: Engineering / Logistics Technical Officer Corps'}
+              {streamRecommendation}
             </div>
             <p className="text-xs text-stone-400 leading-relaxed">
               Official selection at ISSB (Dhaka Cantonment) includes extensive multi-day psychometric tests, physical obstacle testing, and interview boards.

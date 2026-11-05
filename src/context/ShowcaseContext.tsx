@@ -20,6 +20,7 @@ import {
   CareerPathway,
   ComparisonItem
 } from '../types/tactical';
+import { validateComparisonAddition } from '../utils/tacticalLogic';
 
 export type ViewSection = 
   | 'dashboard'
@@ -185,17 +186,15 @@ export const ShowcaseProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   const [compareItems, setCompareItems] = useState<ComparisonItem[]>([]);
 
   const addToCompare = (item: any, type: ComparisonItem['type']): boolean => {
-    if (compareItems.some((c) => c.id === item.id)) {
-      showToast('Item is already in comparison table', 'warning');
-      return false;
-    }
-    if (compareItems.length >= 2) {
-      showToast('Comparison slot full (max 2 items). Please clear or remove an item first.', 'warning');
-      return false;
-    }
-    // Check if type matches existing item in comparison
-    if (compareItems.length === 1 && compareItems[0].type !== type) {
-      showToast(`Cannot compare a ${type} with a ${compareItems[0].type}. Please compare items of the same category.`, 'warning');
+    const check = validateComparisonAddition(compareItems, item.id, type);
+    if (!check.allowed) {
+      if (check.reason === 'duplicate') {
+        showToast('Item is already in comparison table', 'warning');
+      } else if (check.reason === 'full') {
+        showToast('Comparison slot full (max 2 items). Please clear or remove an item first.', 'warning');
+      } else if (check.reason === 'mismatch') {
+        showToast(`Cannot compare a ${type} with a ${compareItems[0].type}. Please compare items of the same category.`, 'warning');
+      }
       return false;
     }
 
